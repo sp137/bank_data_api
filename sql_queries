@@ -1,0 +1,15 @@
+--Given a bank branch IFSC code, get branch details
+
+SELECT bank_id, ifsc, banks.name, branch, address, city, district, state
+FROM branches
+JOIN banks ON banks.id = branches.bank_id
+WHERE ifsc LIKE 'SBIN0000187'
+
+--Given a bank name and city, gets details of all branches of the bank in the city
+
+SELECT bank_id, ifsc, banks.name, branch, address, city, district, state
+FROM branches
+JOIN banks ON banks.id = branches.bank_id
+WHERE banks.name LIKE 'state bank of india' AND city LIKE 'siwan'
+
+
