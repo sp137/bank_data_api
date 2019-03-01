@@ -1,0 +1,21 @@
+from flask import flask
+from flask_sqlalchemy import SQLAlchemy 
+
+app = flask(__name__)
+app.config.from_pyfile('config.cfg')
+db = SQLAlchemy(app)
+
+subs = db.Table('subs',
+	db.Column('bank_id',db.Integer,db.PrimaryKey('bank_branches.bank_id'))	
+	)
+
+class(db.fyle1):
+	ifsc = db.Column(db.String(20))
+	bank_id = db.Column(db.Integer,primary_key = 'True')
+	branch = db.Column(db.String(20))
+	address = db.Column(db.String(20))
+	city = db.Column(db.String(20))
+	district = db.Column(db.String(20))
+	state = db.Column(db.String(20))
+	bank_name = db.Column(db.String(20))
+
